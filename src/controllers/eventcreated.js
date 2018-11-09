@@ -9,7 +9,9 @@ async function newevent(ctx) {
 
     const body = ctx.request.body;
 
-    const date = new Date(2018, body.month, body.day, body.hour, body.minute, 0);
+    console.log(body.month + " " + body.day + ", " + body.year + " " + body.hour + ":" + body.minute + ":00");
+
+    const date = new Date(body.month + " " + body.day + ", " + body.year + " " + body.hour + ":" + body.minute + ":00");
 
     events.insert(ctx.db, body.title, date, body.image, body.location);
 
