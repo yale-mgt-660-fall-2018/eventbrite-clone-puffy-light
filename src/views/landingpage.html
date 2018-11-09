@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>RSVPeasy</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<header>
+  <h1>RSVPeasy</h1>
+</header>
+
+<body>
+
+    <h1>Puffy Light's RSVP for MGT 660</h1>
+
+    <p>
+        Our new app will be dope - just give us some time ;)
+    </p>
+
+    <p>
+        Please find below our current
+    </p>
+    <div>
+        {% for way in waysOfBeingAwesome %}
+            <li>{{way}}</li>
+        {% endfor %}
+    </div>
+
+</body>
+
+</html>
