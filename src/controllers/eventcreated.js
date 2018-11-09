@@ -5,11 +5,11 @@
 const events = require('../models/events.js');
 
 async function newevent(ctx) {
-    const template = 'newevent.njk';
+    const template = 'eventcreated.njk';
 
-    const eventList = events.getAllEvents(ctx.db);
+    console.log(ctx.request.body);
 
-    return ctx.render(template, { eventList });
+    return ctx.render(template, {});
 }
 
 module.exports = {
