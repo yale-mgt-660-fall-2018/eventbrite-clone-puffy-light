@@ -43,8 +43,16 @@ async function getByLocation(db, searchString) {
     return db.oneOrNone(stmt, [searchString]);
 }
 
+async function getAllEvents(db) {
+    const stmt = `
+        SELECT * FROM events
+    `;
+    return db.oneOrNone(stmt);
+}
+
 module.exports = {
     insert,
     count,
     getByLocation,
+    getAllEvents,
 };
