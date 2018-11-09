@@ -7,7 +7,11 @@ const events = require('../models/events.js');
 async function newevent(ctx) {
     const template = 'eventcreated.njk';
 
-    console.log(ctx.request.body);
+    const body = ctx.request.body;
+
+    const date = new Date(2018, body.month, body.day, body.hour, body.minute, 0);
+
+    events.insert(ctx.db, body.title, date, body.image, body.location);
 
     return ctx.render(template, {});
 }
