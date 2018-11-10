@@ -47,7 +47,7 @@ async function getAllEvents(db) {
     const stmt = `
         SELECT * FROM events
     `;
-    return db.oneOrNone(stmt);
+    return db.many(stmt);
 }
 
 module.exports = {
