@@ -8,9 +8,17 @@ async function index(ctx) {
     const template = 'index.njk';
     //const waysOfBeingAwesome = ['awesome1', 'awesome2', 'awesome3'];
 
-    const eventList = events.getAllEvents(ctx.db);
+    let eventList;
 
-    return ctx.render(template, { eventList });
+        try {
+          eventList = await events.getAllEvents(ctx.db);
+        } catch(e) {
+          eventList = []
+          console.log(e);
+        }
+
+
+    return ctx.render(template, {eventList });
 }
 
 module.exports = {
