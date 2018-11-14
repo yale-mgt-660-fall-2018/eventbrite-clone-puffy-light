@@ -21,6 +21,13 @@ async function index(ctx) {
     return ctx.render(template, {eventList });
 }
 
+async function about(ctx) {
+    //const waysOfBeingAwesome = ['awesome1', 'awesome2', 'awesome3'];
+
+
+    return ctx.render("about.njk");
+}
+
 module.exports = {
-    index,
+    index, about
 };
