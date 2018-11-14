@@ -4,30 +4,23 @@
  */
 const events = require('../models/events.js');
 
-async function index(ctx) {
-    const template = 'index.njk';
+async function showEvent(ctx) {
+    const template = 'eventpage.njk';
     //const waysOfBeingAwesome = ['awesome1', 'awesome2', 'awesome3'];
 
-    let eventList;
+    let event;
 
         try {
-          eventList = await events.getAllEvents(ctx.db);
+          event = await events.getEvent(ctx.db, request.params.id);
         } catch(e) {
           eventList = []
           console.log(e);
         }
 
 
-    return ctx.render(template, {eventList });
-}
-
-async function about(ctx) {
-    //const waysOfBeingAwesome = ['awesome1', 'awesome2', 'awesome3'];
-
-
-    return ctx.render("about.njk");
+    return ctx.render(template, {event });
 }
 
 module.exports = {
-    index, about
+    showEvent,
 };
