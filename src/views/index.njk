@@ -3,22 +3,44 @@
 
 <head>
     <meta charset="utf-8">
-    <title>MGT660 Eventbrite Clone</title>
+    <title>RSVPeasy event manager</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
+
+
+<header>
+  <img src="https://www.teachingenglish.org.uk/sites/teacheng/files/styles/large/public/images/RS2779_153509972-low.jpg?itok=PxUf1CG7" alt="RSVPeasy Logo">
+  <h1>RSVPeasy</h1>
+</header>
 
 <body>
 
-    <h1>Eventbrite clone for MGT 660, using Koa and Postgres</h1>
+    <h2>Puffy Light's RSVP for MGT 660</h2>
 
     <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        Our new app will be dope - just give us some time ;)
     </p>
-    <div>
-        {% for event in eventList %}
-            <li>{{event}}</li>
+
+    <p>
+        <b>Upcoming events:</b>
+    </p>
+    <ul>
+      {% for event in eventList %}
+      <li class="event" id="event-0">
+        <a href="/events/{{event.id}}" id="title">{{event.title}}</a>
+        <br />
+        <time>{{event.date}}</time>
+      </li>
         {% endfor %}
-    </div>
+    </ul>
 
 </body>
+
+<a href="/events/new" id="new">Create an event</a>
+
+<footer>
+  <a href="/about">About</a>
+  <a href="/">Home</a>
+</footer>
 
 </html>
