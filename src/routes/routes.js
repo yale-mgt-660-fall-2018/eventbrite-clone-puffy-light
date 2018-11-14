@@ -7,5 +7,6 @@ const router = new Router();
 router.get('/', indexControllers.index);
 router.get('/events/new', neweventControllers.newevent);
 router.post('/events/new', eventcreatedControllers.newevent);
+router.get('/events/:id', eventControllers.getEvent);
 
 module.exports = router;
