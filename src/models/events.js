@@ -50,14 +50,6 @@ async function getAllEvents(db) {
     return db.many(stmt);
 }
 
-async function getEvent(db, eventid) {
-    const stmt = `
-        SELECT * FROM events WHERE
-        id ILIKE '%$1:value%'
-    `;
-    return db.getEvent(stmt, [eventid]);
-}
-
 module.exports = {
     insert,
     count,
