@@ -3,10 +3,43 @@
 
 {% block mainContent %}
 
+
+<h1 id="title">{{event.title}}</h1>
+<div>
+  <span id="date">{{event.date}}</span>
+</div>
+<div>
+  <span id="location">{{event.location}}</span>
+</div>
+
+
+<!-- <div>
+  Want to contribute? <a href="/donate" id="donate">Donate</a> now!
+</div> -->
+<div>
+  <img src="{{event.image_url}}" alt="event image" id="image" />
+</div>
+
+<!--
+ <div>
+  Attendees:
+  <ul class="list-group" id="attendees">
+
+  </ul>
+</div>
+<div>
+  <form action="/rsvp/3" method="post">
+      <input type="email" id="email" name="email" />
+      <button type="submit" class="btn" name="submit">Submit</button>
+  </form>
+</div> -->
+
+
+
   <img src="{{event.image_url}}" alt="RSVPeasy Logo">
 
 
-  <h1>{{event.title}}</h1>
+  <h1></h1>
 
   <p>
     <time>{{event.date}}</time>
