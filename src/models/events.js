@@ -50,9 +50,17 @@ async function getAllEvents(db) {
     return db.many(stmt);
 }
 
+async function getEvent(db, eventid) {
+     const stmt = `
+         SELECT * FROM events WHERE id BETWEEN $1:value AND $1:value
+     `;
+     return db.oneOrNone(stmt, [eventid]);
+ }
+
 module.exports = {
     insert,
     count,
     getByLocation,
     getAllEvents,
+    getEvent,
 };
