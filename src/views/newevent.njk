@@ -1,17 +1,7 @@
-<!DOCTYPE html>
-<html>
+{% extends "src/views/layout.njk" %}
 
-<head>
-    <meta charset="utf-8">
-    <title>Add a new Event</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-</head>
 
-<header>
-  <h1>New Event</h1>
-</header>
-
-<body>
+{% block mainContent %}
 
     <h1>Creating a new event</h1>
     <form action="/events/new" method="post">
@@ -116,6 +106,5 @@
         </select>
         <br />
         <button type="submit" name="submit" class="btn">Submit</button>
-</body>
 
-</html>
+{% endblock %}
