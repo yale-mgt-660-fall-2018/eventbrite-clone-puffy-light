@@ -3,6 +3,16 @@
 
 {% block mainContent %}
 
+{% if err %}
+<ul class="form-errors">
+
+<li>
+    I'm not happy with your form.
+</li>
+
+</ul>
+{% endif %}
+
     <h1>Creating a new event</h1>
     <form action="/events/new" method="post">
         <label for="title">Title</label>
