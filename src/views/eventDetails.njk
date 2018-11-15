@@ -1,31 +1,15 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <meta charset="utf-8">
-    <title>RSVPeasy event manager</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-</head>
+{% extends "src/views/layout.njk" %}
 
 
-<header>
+{% block mainContent %}
+
   <img src="{{event.image_url}}" alt="RSVPeasy Logo">
 
 
   <h1>{{event.title}}</h1>
-</header>
 
-<body>
   <p>
     <time>{{event.date}}</time>
   </p>
 
-</body>
-
-
-<footer>
-  <a href="/about">About</a>
-  <a href="/">Home</a>
-</footer>
-
-</html>
+{% endblock %}

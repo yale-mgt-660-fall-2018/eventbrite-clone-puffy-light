@@ -4,8 +4,8 @@
  */
 const events = require('../models/events.js');
 
-async function newevent(ctx) {
-    const template = 'newevent.njk';
+async function newEvent(ctx) {
+    const template = 'newEvent.njk';
 
     const eventList = events.getAllEvents(ctx.db);
 
@@ -13,5 +13,5 @@ async function newevent(ctx) {
 }
 
 module.exports = {
-    newevent,
+    newEvent,
 };
