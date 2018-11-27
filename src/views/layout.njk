@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+      <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-129281161-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-129281161-1');
+    </script>
+    
+    <meta charset="utf-8">
+    <title>RSVPeasy event manager</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+
+<header>
+  <img src="https://www.teachingenglish.org.uk/sites/teacheng/files/styles/large/public/images/RS2779_153509972-low.jpg?itok=PxUf1CG7" alt="RSVPeasy Logo">
+  <h1>RSVPeasy</h1>
+</header>
+
+<body>
+{% block mainContent %}
+{% endblock %}
+
+
+<a href="/events/new" id="new">Create an event</a>
+
+<footer>
+  <a href="/about">About</a>
+  <a href="/">Home</a>
+</footer>
+</body>
+
+</html>
