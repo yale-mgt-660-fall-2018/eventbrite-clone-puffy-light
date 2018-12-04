@@ -45,4 +45,16 @@
     <time>{{event.date}}</time>
   </p>
 
+  <div>
+    {% for email in eventAttendees %}
+     <li>{{email}}</li>
+     {% endfor %}
+  </div>
+
+  <div>
+    <form action="/rsvp/{{ event.id }}" method="post">
+    <input type="email" id="email" name="email" />
+    <button type="submit" class="btn" name="submit">Submit</button>
+  </div>
+
 {% endblock %}
