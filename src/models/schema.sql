@@ -16,3 +16,10 @@ CREATE TABLE IF NOT EXISTS events (
         NOT NULL
         DEFAULT current_timestamp
 );
+
+DROP TABLE IF EXISTS attendees;
+CREATE TABLE attendees (
+  email text NOT NULL,
+  event_id INTEGER REFERENCES events(id) not null,
+  PRIMARY KEY (email,event_id)
+);
