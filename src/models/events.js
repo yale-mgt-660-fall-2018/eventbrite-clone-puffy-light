@@ -68,7 +68,7 @@ async function getAllEvents(db) {
     const stmt = `
         SELECT * FROM events
     `;
-    return db.many(stmt);
+    return db.any(stmt);
 }
 
 async function getEvent(db, eventid) {
