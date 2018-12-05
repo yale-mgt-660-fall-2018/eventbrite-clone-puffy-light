@@ -13,7 +13,7 @@ router.get('/events/new', newEventControllers.newEvent);
 router.post('/events/new', eventCreatedControllers.newEvent);
 router.get('/about', indexControllers.about);
 router.post('/rsvp/:id', rsvpControllers.attendeeRegistrationPost);
-router.get('/events/api', eventApiControllers.eventApi);
+router.get('/api/events', eventApiControllers.eventApi);
 router.get('/events/:id', eventDetailsControllers.eventDetails);
 router.post('/events/:id', eventDetailsControllers.eventDetails);
 
