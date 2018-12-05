@@ -7,7 +7,7 @@
  async function eventDetails(ctx) {
     const template = 'eventDetails.njk';
     //const waysOfBeingAwesome = ['awesome1', 'awesome2', 'awesome3'];
-    console.log(events.getEvent);
+    //console.log(events.getEvent);
      let event;
          try {
           event = await events.getEvent(ctx.db, Number(ctx.req.url.match(/[0-9]/)[0]));
