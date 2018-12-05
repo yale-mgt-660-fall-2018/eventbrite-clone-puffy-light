@@ -11,9 +11,9 @@ async function attendeeRegistrationPost(ctx) {
     const postRequest=ctx.request.body;
 
     const getRequestId=ctx.params.id;
-    console.log('RSVP!');
-    console.log(postRequest);
-    console.log(getRequestId);
+    //console.log('RSVP!');
+    //console.log(postRequest);
+    //console.log(getRequestId);
 
     //Here we check if the post request meet the rules
     const eventsErrors= [];
@@ -28,10 +28,10 @@ async function attendeeRegistrationPost(ctx) {
         eventsErrors.push('No Event ID');}
 
     if(insertIntoDatabase){
-    console.log(ctx.request.body);
+    //console.log(ctx.request.body);
     const eventsModel = require('../models/events.js');
     queryResult=await eventsModel.insertAttendee(ctx.db,postRequest.email, getRequestId);
-    console.log("After Registration")
+    //console.log("After Registration")
     eventId=queryResult.id;
 
     if (getRequestId==null || getRequestId=='') {
