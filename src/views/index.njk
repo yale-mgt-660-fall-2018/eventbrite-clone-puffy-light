@@ -2,14 +2,17 @@
 
 
 {% block mainContent %}
-
-
-    <h2>Puffy Light's RSVP for MGT 660</h2>
-
-    <p>
-        Our new app will be dope - just give us some time ;)
-    </p>
-
+    <body class="bg-light">
+      <section class="jumbotron text-center">
+        <div class="container">
+          <img id="logo" class="mb-4" src="https://www.teachingenglish.org.uk/sites/teacheng/files/styles/large/public/images/RS2779_153509972-low.jpg?itok=PxUf1CG7" alt="RSVPeasy Logo" width="72" height="72" >
+          <h2 class="jumbotron-heading">RSVPeasy</h1>
+          <p class="lead text-muted">Puffy Light's RSVP for MGT 660<p>
+          <hr class="my-4">
+          <p>Push the button to create a new event</p>
+          <a class="btn btn-dark align-middle" role="button" href="/events/new">Create an event</a>
+        </div>
+      </section>
     <p>
         <b>Upcoming events:</b>
     </p>
@@ -22,4 +25,7 @@
       </li>
         {% endfor %}
     </ul>
+
+<a href='/events/new' id='new'>Create an event</a>
 {% endblock %}
+

@@ -13,108 +13,133 @@
 </ul>
 {% endif %}
 
-    <h1>Creating a new event</h1>
-    <form action="/events/new" method="post">
-        <label for="title">Title</label>
-        <input name="title" type="text"/>
-        <br />
-        <label for="location">Location</label>
-        <input name="location" type="text"/>
-        <br />
-        <label for="image">Image</label>
-        <input name="image" type="text"/>
-        <br />
-        <label for="year">Year</label>
-        <select name="year">
-            <option>2017</option>
-            <option>2018</option>
-        </select>
-        <br />
-        <label for="month">Month</label>
-        <select name="month">
-            <option>January</option>
-            <option>February</option>
-            <option>March</option>
-            <option>April</option>
-            <option>May</option>
-            <option>June</option>
-            <option>July</option>
-            <option>August</option>
-            <option>September</option>
-            <option>October</option>
-            <option>November</option>
-            <option>December</option>
-        </select>
-        <br />
-        <label for="day">Day</label>
-        <select name="day">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-            <option>6</option>
-            <option>7</option>
-            <option>8</option>
-            <option>9</option>
-            <option>10</option>
-            <option>11</option>
-            <option>12</option>
-            <option>13</option>
-            <option>14</option>
-            <option>15</option>
-            <option>16</option>
-            <option>17</option>
-            <option>18</option>
-            <option>19</option>
-            <option>20</option>
-            <option>21</option>
-            <option>22</option>
-            <option>23</option>
-            <option>24</option>
-            <option>25</option>
-            <option>26</option>
-            <option>27</option>
-            <option>28</option>
-            <option>29</option>
-            <option>30</option>
-            <option>31</option>
-        </select>
-        <br />
-        <label for="hour">Hour</label>
-        <select name="hour">
-            <option>0</option>
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-            <option>6</option>
-            <option>7</option>
-            <option>8</option>
-            <option>9</option>
-            <option>10</option>
-            <option>11</option>
-            <option>12</option>
-            <option>13</option>
-            <option>14</option>
-            <option>15</option>
-            <option>16</option>
-            <option>17</option>
-            <option>18</option>
-            <option>19</option>
-            <option>20</option>
-            <option>21</option>
-            <option>22</option>
-            <option>23</option>
-        </select>
-        <br />
-        <label for="minute">Minute</label>
-        <select name="minute">
-            <option>00</option>
-            <option>30</option>
-        </select>
-        <br />
-        <button type="submit" name="submit" class="btn">Submit</button>
+
+    <body class="bg-light">
+      <section class="jumbotron text-center">
+        <div class="container">
+           <img class="mb-4" src="https://www.teachingenglish.org.uk/sites/teacheng/files/styles/large/public/images/RS2779_153509972-low.jpg?itok=PxUf1CG7" alt="RSVPeasy Logo" width="72" height="72" >
+            <h2>Create new event</h2>
+            <p class="lead">By filing the below questionnaire you can create a new event in RSVPeasy platform</p>
+          </p>
+        </div>
+      </section>
+
+    <div class="container align-middle">
+        <form class="needs-validation" novalidate action="/events/new" method="post">
+                <div class="form-group col-md-5 align-middle">
+                    <label for="title">Title</label>
+                    <input name="title" class="form-control align-middle" type="text"/>
+                </div>
+                <div class="form-group col-md-5 align-middle">
+                    <label for="location">Location</label>
+                    <input name="location" class="form-control" type="text"/>
+                </div>
+                <div class="form-group col-md-5 align-middle">
+                    <label for="image">Image</label>
+                    <input name="image" class="form-control" type="text"/>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-2 mb-3">
+                        <label for="year">Year</label>
+                        <select class="custom-select d-block w-100" name="year">
+                            <option>2017</option>
+                            <option>2018</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-2 mb-3">
+                        <label for="month">Month</label>
+                        <select class="custom-select d-block w-100" name="month">
+                            <option>January</option>
+                            <option>February</option>
+                            <option>March</option>
+                            <option>April</option>
+                            <option>May</option>
+                            <option>June</option>
+                            <option>July</option>
+                            <option>August</option>
+                            <option>September</option>
+                            <option>October</option>
+                            <option>November</option>
+                            <option>December</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-1 mb-3">
+                        <label for="day">Day</label>
+                        <select class="custom-select d-block w-100" name="day">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                            <option>6</option>
+                            <option>7</option>
+                            <option>8</option>
+                            <option>9</option>
+                            <option>10</option>
+                            <option>11</option>
+                            <option>12</option>
+                            <option>13</option>
+                            <option>14</option>
+                            <option>15</option>
+                            <option>16</option>
+                            <option>17</option>
+                            <option>18</option>
+                            <option>19</option>
+                            <option>20</option>
+                            <option>21</option>
+                            <option>22</option>
+                            <option>23</option>
+                            <option>24</option>
+                            <option>25</option>
+                            <option>26</option>
+                            <option>27</option>
+                            <option>28</option>
+                            <option>29</option>
+                            <option>30</option>
+                            <option>31</option>
+                        </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group -md-1 mb-2">
+                            <label for="hour">Hour</label>
+                            <select class="custom-select d-block w-100" name="hour">
+                                <option>0</option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                                <option>6</option>
+                                <option>7</option>
+                                <option>8</option>
+                                <option>9</option>
+                                <option>10</option>
+                                <option>11</option>
+                                <option>12</option>
+                                <option>13</option>
+                                <option>14</option>
+                                <option>15</option>
+                                <option>16</option>
+                                <option>17</option>
+                                <option>18</option>
+                                <option>19</option>
+                                <option>20</option>
+                                <option>21</option>
+                                <option>22</option>
+                                <option>23</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-1 mb-3">
+                            <label for="minute">Minute</label>
+                            <select class="custom-select d-block w-100" name="minute">
+                                <option>00</option>
+                                <option>30</option>
+                            </select>
+                        </div>
+                    </div>
+                <button class="btn btn-primary align-middle" type="submit" name="submit">Submit</button>
+                </form>
+        </div>
 
 {% endblock %}
