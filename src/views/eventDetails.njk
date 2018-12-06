@@ -31,7 +31,7 @@
       </div>
       <hr class="my-4">
       <div>
-      <form action="/rsvp/{{ event.id }}" method="post">
+      <form action="/events/{{ event.id }}" method="post">
         <input type="email" id="email" name="email" />
         <button class="btn btn-primary align-middle" type="submit" name="submit">Attend!</button>
       </div>
@@ -58,13 +58,6 @@
 
   </ul>
 </div>
-
-
-  <div>
-    {% for email in eventAttendees %}
-     <li>{{email}}</li>
-     {% endfor %}
-  </div>
 
 
 

@@ -24,6 +24,24 @@
      return ctx.render(template, {event, attendees });
 }
 
+async function attendeeRegistrationPost(ctx) {
+
+    const postRequest=ctx.request.body;
+    const getRequestId=ctx.params.id;
+    //console.log('RSVP!');
+    //console.log(postRequest);
+    //console.log(getRequestId);
+
+    try {
+      queryResult=await events.insertAttendee(ctx.db,postRequest.email, getRequestId);
+    } catch (e) {
+    }
+    return ctx.redirect("/events/"+getRequestId);
+
+}
+
+
+
  module.exports = {
-    eventDetails
+    attendeeRegistrationPost, eventDetails
 };
