@@ -16,7 +16,6 @@ async function newEvent(ctx) {
 
     try {
       event_ans = await events.insert(ctx.db, body.title, date, body.image, body.location);
-      template = 'eventCreated.njk';
       return ctx.redirect('/events/'+event_ans.id);
     } catch (e) {
       template = 'newEvent.njk';
