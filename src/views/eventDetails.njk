@@ -3,22 +3,42 @@
 
 {% block mainContent %}
 
+    <body class="bg-light">
+      <section class="jumbotron text-center">
+        <div class="container">
+           <img class="mb-4" src="https://www.teachingenglish.org.uk/sites/teacheng/files/styles/large/public/images/RS2779_153509972-low.jpg?itok=PxUf1CG7" alt="RSVPeasy Logo" width="72" height="72" >
+            <h2 id="title">Event: {{event.title}}</h2>
+            <p class="lead text-muted">Contribute & Register to this event</p>
+            <hr class="my-4">
+            <p>Push the button to donate now!</p>
+            <a class="btn btn-dark align-middle" role="button" href="/donate">Donate now!</a>
+        </div>
+      </section>
 
-<h1 id="title">{{event.title}}</h1>
-<div>
-  <span id="date">{{event.date}}</span>
-</div>
-<div>
-  <span id="location">{{event.location}}</span>
-</div>
-
-
-<!-- <div>
-  Want to contribute? <a href="/donate" id="donate">Donate</a> now!
-</div> -->
-<div>
-  <img src="{{event.image_url}}" alt="event image" id="image" />
-</div>
+    <div class="container align-center text-center">
+      <div>
+        <img src="{{event.image_url}}" alt="event image" id="image" />
+      </div>
+      <div>
+      <h1 class="text-white-50 bg-info text-center" id="title">{{event.title}}</h1>
+      </div>
+      <div>
+        <span id="date">When: {{event.date}}</span>
+      </div>
+      <div>
+        <span id="location">Where: {{event.location}}</span>
+      </div>
+      <hr class="my-4">
+      <div>
+      <form action="/rsvp/{{ event.id }}" method="post">
+        <input type="email" id="email" name="email" />
+        <button class="btn btn-primary align-middle" type="submit" name="submit">Attend!</button>
+      </div>
+      <hr class="my-4">
+      <div>
+      <a class="h3" href="/donate" id="donate">Donate now!</a>
+      </div>
+    </div>
 
 <!--
  <div>
@@ -35,26 +55,12 @@
 </div> -->
 
 
-
-  <img src="{{event.image_url}}" alt="RSVPeasy Logo">
-
-
-  <h1></h1>
-
-  <p>
-    <time>{{event.date}}</time>
-  </p>
-
   <div>
     {% for email in eventAttendees %}
      <li>{{email}}</li>
      {% endfor %}
   </div>
 
-  <div>
-    <form action="/rsvp/{{ event.id }}" method="post">
-    <input type="email" id="email" name="email" />
-    <button type="submit" class="btn" name="submit">Submit</button>
-  </div>
+
 
 {% endblock %}
