@@ -4,6 +4,16 @@
 
 {% block mainContent %}
 
+{% if err %}
+<ul class="form-errors">
+
+<li>
+  Bad, bad email!
+</li>
+
+</ul>
+{% endif %}
+
     <body class="bg-light">
       <section class="jumbotron text-center">
         <div class="container">
@@ -15,6 +25,14 @@
             <a class="btn btn-dark align-middle" role="button" href="/donate">Donate now!</a>
         </div>
       </section>
+
+      {% if "" != cc %}
+      <div>
+        REGISTERED! Your confirmation code is <b>{{cc}}</b>
+      </div>
+      {% endif %}
+
+
 
     <div class="container align-center text-center">
       <div>
