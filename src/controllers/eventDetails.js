@@ -9,6 +9,8 @@ const crypto = require('crypto');
  async function eventDetails(ctx) {
    let err = false;
    let cc = "";
+   const id = Number(ctx.req.url.match(/[0-9]+/)[0]);
+   console.log(id);
    if (undefined != ctx.attendeeInfo) {
       err = ctx.attendeeInfo.err;
       if (!err) {cc = ctx.attendeeInfo.cc;}
@@ -17,13 +19,13 @@ const crypto = require('crypto');
     //console.log(events.getEvent);
      let event, attendees;
      try {
-          event = await events.getEvent(ctx.db, Number(ctx.req.url.match(/[0-9]+/)[0]));
+          event = await events.getEvent(ctx.db, id);
         } catch(e) {
           event = [];
           console.log(e);
         }
         try {
-         attendees = await events.getAttendeeByEventId(ctx.db, Number(ctx.req.url.match(/[0-9]+/)[0]));
+         attendees = await events.getAttendeeByEventId(ctx.db, id);
        } catch(e) {
          attendees = [];
          console.log(e);
@@ -37,9 +39,6 @@ async function attendeeRegistrationPost(ctx) {
     const getRequestId=ctx.params.id;
     ctx.attendeeInfo = {};
     ctx.attendeeInfo.err = false;
-    //console.log('RSVP!');
-    //console.log(postRequest);
-    //console.log(getRequestId);
 
     try {
       queryResult=await events.insertAttendee(ctx.db,email, getRequestId);
