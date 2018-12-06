@@ -1,6 +1,5 @@
 {% extends "src/views/layout.njk" %}
 
-
 {% block title %}{{event.title}}{% endblock %}
 
 {% block mainContent %}
@@ -42,19 +41,23 @@
       </div>
     </div>
 
-<!--
+
+    <li class="event" id="event-0">
+      <a href="/events/{{event.id}}" id="title">{{event.title}}</a>
+      <br />
+      <time>{{event.date}}</time>
+    </li>
+
  <div>
   Attendees:
   <ul class="list-group" id="attendees">
 
+    {% for attendee in attendees %}
+            <li class="list-group-item">{{attendee.email}}</li>
+      {% endfor %}
+
   </ul>
 </div>
-<div>
-  <form action="/rsvp/3" method="post">
-      <input type="email" id="email" name="email" />
-      <button type="submit" class="btn" name="submit">Submit</button>
-  </form>
-</div> -->
 
 
   <div>

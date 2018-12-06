@@ -8,34 +8,22 @@
     const template = 'eventDetails.njk';
     //const waysOfBeingAwesome = ['awesome1', 'awesome2', 'awesome3'];
     //console.log(events.getEvent);
-     let event;
+     let event, attendees;
          try {
           event = await events.getEvent(ctx.db, Number(ctx.req.url.match(/[0-9]+/)[0]));
-          console.log(Number(ctx.req.url.match(/[0-9]+/)[0]));
         } catch(e) {
           event = [];
           console.log(e);
         }
-     return ctx.render(template, {event });
-}
-
-async function eventAttendees(ctx) {
-   const template = 'eventDetails.njk';
-   //const waysOfBeingAwesome = ['awesome1', 'awesome2', 'awesome3'];
-   //console.log(events.getAttendeeByEventId);
-    let attendees;
         try {
          attendees = await events.getAttendeeByEventId(ctx.db, Number(ctx.req.url.match(/[0-9]+/)[0]));
-         console.log(attendees);
        } catch(e) {
-         event = []
+         attendees = []
          console.log(e);
        }
-    return ctx.render(template, {attendees });
+     return ctx.render(template, {event, attendees });
 }
 
  module.exports = {
-    eventDetails,
-    eventAttendees
-
+    eventDetails
 };
