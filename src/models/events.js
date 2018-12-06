@@ -64,6 +64,14 @@ async function getByLocation(db, searchString) {
     return db.oneOrNone(stmt, [searchString]);
 }
 
+async function getByTitle (db, searchString) {
+  const stmt = `
+      SELECT * FROM events WHERE
+      title LIKE '%$1:value%'
+  `;
+  return db.any(stmt, [searchString]);
+}
+
 async function getAllEvents(db) {
     const stmt = `
         SELECT * FROM events
@@ -86,4 +94,5 @@ module.exports = {
     getEvent,
     insertAttendee,
     getAttendeeByEventId,
+    getByTitle
 };

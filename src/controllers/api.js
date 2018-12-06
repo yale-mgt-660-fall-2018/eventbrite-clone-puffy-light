@@ -17,8 +17,10 @@ async function eventApi(ctx) {
     const search = ctx.request.query.search;
     let listOfEvents = [];
     if (search) {
-        // Get only those events that match the search in their title
-        // Currently returns all, add search request function here
+      // Get only those events that match the search in their title
+      try {
+        listOfEvents = await events.getByTitle(ctx.db, search);
+      } catch (e) {}
     } else {
         // Get all events
         try {
