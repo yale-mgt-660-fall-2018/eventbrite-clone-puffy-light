@@ -7,6 +7,7 @@ const events = require('../models/events.js');
  */
 async function newEvent(ctx) {
     var template_ec;
+    var event_ans;
     var err = false;
 
     const body = ctx.request.body;
@@ -14,14 +15,15 @@ async function newEvent(ctx) {
     const date = new Date(body.month + " " + body.day + ", " + body.year + " " + body.hour + ":" + body.minute + ":00");
 
     try {
-      await events.insert(ctx.db, body.title, date, body.image, body.location);
+      event_ans = await events.insert(ctx.db, body.title, date, body.image, body.location);
       template = 'eventCreated.njk';
+      return ctx.redirect('/events/'+event_ans.id);
     } catch (e) {
       template = 'newEvent.njk';
       err = true;
+      return ctx.render(template, {err});
     }
 
-    return ctx.render(template, {err});
 }
 
 module.exports = {

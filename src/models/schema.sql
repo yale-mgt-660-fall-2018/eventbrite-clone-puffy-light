@@ -9,7 +9,7 @@ CREATE TABLE IF NOT EXISTS events (
     "date" TIMESTAMP WITH TIME ZONE NOT NULL,
     -- The 'image_url' must be a URL ending in png, gif, jpg.
     image_url TEXT NOT NULL
-        CHECK ( image_url ~ '^https?://.*\.(png|gif|jpg)$' ),
+        CHECK ( image_url ~* '^https?://.*\.(png|gif|jpg)$' ),
     "location" TEXT NOT NULL,
     -- Record the time at which this event was created
     created_at TIMESTAMP WITH TIME ZONE
