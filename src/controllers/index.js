@@ -28,6 +28,11 @@ async function about(ctx) {
     return ctx.render("about.njk");
 }
 
+
+async function donate(ctx) {
+  return ctx.render("donate.njk");
+}
+
 module.exports = {
-    index, about
+    index, about, donate
 };

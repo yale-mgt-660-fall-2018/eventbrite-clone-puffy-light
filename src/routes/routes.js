@@ -14,5 +14,6 @@ router.get('/about', indexControllers.about);
 router.get('/api/events', eventApiControllers.eventApi);
 router.get('/events/:id', eventDetailsControllers.eventDetails);
 router.post('/events/:id', eventDetailsControllers.attendeeRegistrationPost);
+router.get('/donate', indexControllers.donate);
 
 module.exports = router;
