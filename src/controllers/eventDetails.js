@@ -10,7 +10,6 @@ const crypto = require('crypto');
    let err = false;
    let cc = "";
    const id = Number(ctx.req.url.match(/[0-9]+/)[0]);
-   console.log(id);
    if (undefined != ctx.attendeeInfo) {
       err = ctx.attendeeInfo.err;
       if (!err) {cc = ctx.attendeeInfo.cc;}
